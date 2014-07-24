@@ -8,7 +8,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-//apply plugin: 'maven'
 
 apply plugin: 'propdeps'
 apply plugin: 'propdeps-maven'
@@ -17,9 +16,6 @@ apply plugin: 'propdeps-eclipse'
 
 //noinspection GroovyUnusedAssignment
 sourceCompatibility = 1.7
-
-//version = '0.0.1'
-//group = 'net.vrallev.java.library'
 
 repositories {
     mavenCentral()
@@ -46,41 +42,8 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Implementation-Version': version
+        attributes 'Implementation-Version': VERSION_NAME
     }
 }
 
 apply from: 'gradle-mvn-push.gradle'
-
-//afterEvaluate { project ->
-//    uploadArchives {
-//        repositories {
-//            mavenDeployer {
-////            repository(url: mavenLocal().getUrl())
-//                repository(url: "file://" + project.getProperties().get('mvnRepoUrl'))
-//            }
-//        }
-//    }
-//
-//    //noinspection GroovyAssignabilityCheck
-//    task javaJavadocs(type: Javadoc) {
-//        source = sourceSets.main.allJava
-//    }
-//
-//    task javaJavadocsJar(type: Jar) {
-//        classifier = 'javadoc'
-//        //noinspection GroovyAssignabilityCheck
-//        from javaJavadocs.destinationDir
-//    }
-//
-//    task javaSourcesJar(type: Jar) {
-//        classifier = 'sources'
-//        //noinspection GroovyAssignabilityCheck
-//        from sourceSets.main.allSource
-//    }
-//
-//    artifacts {
-//        archives javaSourcesJar
-//        archives javaJavadocsJar
-//    }
-//}

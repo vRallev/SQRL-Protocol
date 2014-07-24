@@ -25,9 +25,9 @@ dependencies {
 Advanced
 --------
 
-The library requires to implement the `EccProvider25519` interface. You can either implement this interface or use [one of my other libraries][2]. 
+The library requires to implement the `EccProvider25519` interface. You can either implement this interface or use [one of my other libraries][2]. The libraries are automatically found and you don't need to setup something else. 
 
-This library has other dependencies. **Please respect their licenses!**
+Both libraries depend on other code. **Please respect the author's licenses!**
 
 ```groovy
 repositories {

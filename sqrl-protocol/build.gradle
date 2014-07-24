@@ -1,0 +1,86 @@
+buildscript {
+    repositories {
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+    }
+}
+
+apply plugin: 'java'
+//apply plugin: 'maven'
+
+apply plugin: 'propdeps'
+apply plugin: 'propdeps-maven'
+apply plugin: 'propdeps-idea'
+apply plugin: 'propdeps-eclipse'
+
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = 1.7
+
+//version = '0.0.1'
+//group = 'net.vrallev.java.library'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://raw.githubusercontent.com/vRallev/mvn-repo/master/'
+    }
+}
+
+configurations{
+    providedCompile
+}
+
+dependencies {
+    compile 'com.madgag.spongycastle:core:1.50.0.0'
+
+    provided 'net.vrallev.android.library:ecc-25519-facade:1.0.1@jar'
+    provided 'net.vrallev.java.library:ecc-25519:1.0.1'
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.hamcrest:hamcrest-library:1.3'
+    testCompile 'org.easytesting:fest-assert:1.4'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Version': version
+    }
+}
+
+apply from: 'gradle-mvn-push.gradle'
+
+//afterEvaluate { project ->
+//    uploadArchives {
+//        repositories {
+//            mavenDeployer {
+////            repository(url: mavenLocal().getUrl())
+//                repository(url: "file://" + project.getProperties().get('mvnRepoUrl'))
+//            }
+//        }
+//    }
+//
+//    //noinspection GroovyAssignabilityCheck
+//    task javaJavadocs(type: Javadoc) {
+//        source = sourceSets.main.allJava
+//    }
+//
+//    task javaJavadocsJar(type: Jar) {
+//        classifier = 'javadoc'
+//        //noinspection GroovyAssignabilityCheck
+//        from javaJavadocs.destinationDir
+//    }
+//
+//    task javaSourcesJar(type: Jar) {
+//        classifier = 'sources'
+//        //noinspection GroovyAssignabilityCheck
+//        from sourceSets.main.allSource
+//    }
+//
+//    artifacts {
+//        archives javaSourcesJar
+//        archives javaJavadocsJar
+//    }
+//}

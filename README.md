@@ -10,7 +10,7 @@ Download [the latest JAR][1] or grab via Gradle or Maven:
 
 ```groovy
 dependencies {
-    compile 'net.vrallev.sqrl:sqrl-protocol:0.0.1'
+    compile 'net.vrallev.sqrl:sqrl-protocol:0.0.2'
 }
 ```
 
@@ -18,7 +18,7 @@ dependencies {
 <dependency>
     <groupId>net.vrallev.sqrl</groupId>
     <artifactId>sqrl-protocol</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
@@ -54,6 +54,7 @@ SqrlClientBody bodyParsed = SqrlProtocol.instance()
 SqrlServerBody bodyOriginal = SqrlProtocol.instance()
 		.answerClient(body, ServerParameter.SQRL_ACCOUNT_CREATION_ALLOWED)
 		.withServerFriendlyName("Unit Test")
+        .withStoredKeys(user.getServerUnlockKey(), user.getVerifyUnlockKey())
 		.create()
 		.asSqrlServerBody();
 

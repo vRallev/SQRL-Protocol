@@ -94,7 +94,7 @@ public class SqrlClientBodyParser {
         String clientParameterDecoded = new String(SqrlRequestUtil.decodeBase64(mParameters.get("client")), SqrlRequestUtil.ASCII);
         ClientParameter clientParameter = new ClientParameterParser().parse(clientParameterDecoded);
         ServerParameter serverParameter = new ServerParameterParser().parse(mParameters.get("server"), true);
-        byte[] concatenation = (clientParameter.getParameterEncoded() + serverParameter.getParameterEncoded()).getBytes(SqrlRequestUtil.ASCII);
+        byte[] concatenation = (mParameters.get("client") + mParameters.get("server")).getBytes(SqrlRequestUtil.ASCII);
 
         byte[] ids = SqrlRequestUtil.decodeBase64(mParameters.get("ids"));
 

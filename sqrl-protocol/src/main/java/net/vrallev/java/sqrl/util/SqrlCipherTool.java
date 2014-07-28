@@ -41,7 +41,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class SqrlCipherTool {
 
     private static final String MAC_ALGO = "HmacSHA256";
-    private static final String DEFAULT_HASH_ALGORITHM = "SHA-512";
+    private static final String DEFAULT_HASH_ALGORITHM = "SHA-256";
     private static final Charset UTF_8 = Charset.forName("UTF-8");
 
     private final SecureRandom mRandom;

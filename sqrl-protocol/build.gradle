@@ -19,10 +19,6 @@ sourceCompatibility = 1.7
 
 repositories {
     mavenCentral()
-
-    maven {
-        url 'https://raw.githubusercontent.com/vRallev/mvn-repo/master/'
-    }
 }
 
 configurations{
@@ -32,8 +28,8 @@ configurations{
 dependencies {
     compile 'com.madgag.spongycastle:core:1.50.0.0'
 
-    provided 'net.vrallev.android.library:ecc-25519-facade:1.0.1@jar'
-    provided 'net.vrallev.java.library:ecc-25519:1.0.1'
+    provided 'net.vrallev.ecc:ecc-25519-android-facade:1.0.0'
+    provided 'net.vrallev.ecc:ecc-25519-java:1.0.0'
 
     testCompile 'junit:junit:4.11'
     testCompile 'org.hamcrest:hamcrest-library:1.3'

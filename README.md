@@ -25,20 +25,14 @@ dependencies {
 Advanced
 --------
 
-The library requires to implement the `EccProvider25519` interface. You can either implement this interface or use [one of my other libraries][2]. The libraries are automatically found and you don't need to setup something else. 
+The library requires to implement the `EccProvider25519` interface. You can either implement this interface or use [one of my other libraries][2]. The libraries are automatically found in the classpath and you don't need to setup anything else. 
 
 Both libraries depend on other code. **Please respect the author's licenses!**
 
 ```groovy
-repositories {
-    maven {
-        url 'https://raw.github.com/vRallev/mvn-repo/master/'
-    }
-}
-
 dependencies {
-    compile 'net.vrallev.android.library:ecc-25519:1.0.1' // Android
-    compile 'net.vrallev.java.library:ecc-25519:1.0.1' // JVM
+    compile 'net.vrallev.ecc:ecc-25519-android:1.0.0'   // Android
+    compile 'net.vrallev.ecc:ecc-25519-java:1.0.0'      // JVM
 }
 ```
 

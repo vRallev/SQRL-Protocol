@@ -1,5 +1,9 @@
-SQRL-Protocol
-=============
+# Deprecated
+### This project is not maintained anymore.
+
+
+~~SQRL-Protocol~~
+=================
 
 An implementation of the SQRL protocol. This library helps to parse, validate and create SQRL messages.
 
